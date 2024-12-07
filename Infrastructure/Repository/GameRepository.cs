@@ -38,7 +38,7 @@ namespace Infrastructure.Repository
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+           return _db.VideoGames.FirstOrDefault(x => x.Id == id) != null;
         }
 
         public VideoGameEntity GetAll(int id)

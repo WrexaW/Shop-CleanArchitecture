@@ -33,9 +33,9 @@ namespace Application.Services
             }
             return _gadb.Create(input.Price , input.Name , input.Sabak);
         }
-        public VideoGameEntity Delete(int id)
+        public bool Delete(int id)
         {
-            return _gadb.GetAll(id);
+            return _gadb.Delete(id);
         }
     }
 }
