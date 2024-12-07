@@ -10,7 +10,7 @@ namespace Domain.Entities
     public class VideoGameEntity
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Sabak { get; set; }
         public int Price { get; set; }

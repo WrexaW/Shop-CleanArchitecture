@@ -8,9 +8,11 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.dbContext
 {
-    public class dbContext : DbContext
+    public class dbContextSQL : DbContext
     {
         public DbSet<UserEntity> Users { get; set; }
+        public DbSet<VideoGameEntity> VideoGames { get; set; }
+        public DbSet<ShopEntity> Shops { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("server=130.185.75.54;Database=Project#C14;Encrypt=false;user id = i3center1561; password = 123");

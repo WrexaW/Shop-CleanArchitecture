@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces
 {
-    public interface IShopService
+    public interface IShopRepoitory
     {
         public ShopEntity Bay(int userId , int videoGameId ,int orderCode);
     }

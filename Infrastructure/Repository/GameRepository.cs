@@ -1,6 +1,7 @@
-﻿using Application.Dto;
+﻿
 using Domain.Entities;
 using Domain.Interfaces;
+using Infrastructure.dbContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,28 @@ namespace Infrastructure.Repository
 {
     public class GameRepository : IGameRepository
     {
-        public VideoGameEntity Create(CreateGameDto input)
+        private dbContextSQL _db;
+        public GameRepository(dbContextSQL db)
         {
-            throw new NotImplementedException();
+            _db = db;
+        }
+        public VideoGameEntity GetAllByName(string name)
+        {
+
+            return _db.VideoGames.FirstOrDefault(G => G.Name == name)!;
+        }
+        public VideoGameEntity Create(int price, string name, string sabak)
+        {
+            VideoGameEntity entity = new VideoGameEntity()
+            {
+                Price = price,
+                Name = name,
+                Sabak = sabak
+
+            };
+            _db.VideoGames.Add(entity);
+            _db.SaveChanges();
+            return entity;
         }
 
         public bool Delete(int id)

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructure.Migrations
 {
-    [DbContext(typeof(dbContext))]
+    [DbContext(typeof(dbContextSQL))]
     [Migration("20241205131033_inif")]
     partial class inif
     {
